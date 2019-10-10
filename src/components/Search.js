@@ -11,7 +11,9 @@ import IconButton from '@material-ui/core/IconButton';
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginTop: 50
   },
   input: {
     margin: theme.spacing(1)
@@ -34,6 +36,7 @@ const Search = props => {
   }
 
   const search = e => {
+      e.preventDefault();
       props.searchBrewery(state);
   }
 

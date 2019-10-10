@@ -9,6 +9,10 @@ const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1,
     },
+    navBar: {
+        backgroundColor: '#8C1313'
+    },
+    
   }));
 
 export default function NavBar() {
@@ -16,8 +20,8 @@ export default function NavBar() {
 
     return (
     <div className={classes.root}>
-        <AppBar position="static">
-            <Toolbar variant="dense">
+        <AppBar className={classes.navBar} position="static">
+            <Toolbar className={classes.toolBar} variant="dense">
             <Typography variant="h6" color="inherit">
                 BrewTime
             </Typography>
