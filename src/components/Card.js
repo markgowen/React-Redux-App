@@ -6,7 +6,9 @@ import Brewery from './Brewery'
 
 const BreweryCard = props => {
     useEffect(() => {
+        if (props.breweries.length === 0) {
         props.fetchBrewery();
+        }
     }, []);
     
     if (props.isFetching) {

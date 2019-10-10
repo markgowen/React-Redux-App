@@ -15,3 +15,13 @@ export const fetchBrewery = () => dispatch => {
     .then(res => dispatch({ type: FETCH_SUCCESS, payload: res.data }))
     .catch(err => dispatch({ type: FETCH_FAILURE, payload: err.response }));
 };
+
+export const searchBrewery = (searchStr) => dispatch => {
+     // action objects
+  dispatch({ type: START_FETCHING });
+  // async action and dispatch error or succes action
+  axios
+    .get(`https://api.openbrewerydb.org/breweries?by_state=${searchStr}`)
+    .then(res => dispatch({ type: FETCH_SUCCESS, payload: res.data }))
+    .catch(err => dispatch({ type: FETCH_FAILURE, payload: err.response }));
+}
